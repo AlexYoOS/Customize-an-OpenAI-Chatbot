@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>project</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Build Your Own Custom Chatbot</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -36,7 +36,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
-.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -57,6 +56,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
+  </style>
+<style type="text/css">
+    /*This file contains any manual css for this page that needs to override the global styles.
+This is only required when different pages style the same element differently. This is just
+a hack to deal with our current css styles and no new styling should be added in this file.*/
+
+#ipython-main-app {
+    position: relative;
+}
+#jupyter-main-app {
+    position: relative;
+}
+
   </style>
 
 
@@ -14465,6 +14477,10 @@ a.anchor-link {
   display: none;
 }
 
+.highlight  {
+  margin: 0.4em;
+}
+
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14474,26 +14490,9 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+.CodeMirror pre {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
-}
-
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
-  font-size: var(--jp-code-font-size);
+  padding: 0;
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14539,10 +14538,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   display: none;
 }
 
-@page {
-    margin: 0.5in; /* Margin for each printed piece of paper */
-}
-
 @media print {
   .jp-Cell-inputWrapper,
   .jp-Cell-outputWrapper {
@@ -14577,12 +14572,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14591,7 +14586,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div id="cell-id=124e5672" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14602,13 +14597,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
-<div id="cell-id=2a4a94b3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The medical sector at this point in time has not yet utilized Artificial Intelligence models to a degree that would be possible, in particular for patients &quot;first contact to the medical knowledge base&quot; for intitial overview of their presumed medical issue prior to seeing a specialist. Also the opposite way should be explored in which e.g. a family doctor may use a costumized chatbot to compare symptoms of a patient to a medical assumption, doing this in conversation with a costumized model may be a route for informed decision making.</p>
+<p>The medical sector at this point in time has not yet utilized Artificial Intelligence models to a degree that would be possible, in particular for patients "first contact to the medical knowledge base" for intitial overview of their presumed medical issue prior to seeing a specialist. Also the opposite way should be explored in which e.g. a family doctor may use a costumized chatbot to compare symptoms of a patient to a medical assumption, doing this in conversation with a costumized model may be a route for informed decision making.</p>
 <p>The chosen dataset is a Wikipedia scrape of <strong>Chagas Disease</strong>, for which the ultimate questions will query directly, potentially another useful costumization could be a resource for a specific symptom instead of a disease, but for this experiment we will investigate the formerly mentioned specific disease.</p>
 <p>One can imagine to have a library of disease specific customized-chat bots for large scale implementation</p>
 
@@ -14616,18 +14611,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
-<div id="cell-id=a63d4c5f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Data-Wrangling">Data Wrangling<a class="anchor-link" href="#Data-Wrangling">&#182;</a></h2><p>TODO: In the cells below, load your chosen dataset into a <code>pandas</code> dataframe with a column named <code>&quot;text&quot;</code>. This column should contain all of your text data, separated into at least 20 rows.</p>
+<h2 id="Data-Wrangling">Data Wrangling<a class="anchor-link" href="#Data-Wrangling">&#182;</a></h2><p>TODO: In the cells below, load your chosen dataset into a <code>pandas</code> dataframe with a column named <code>"text"</code>. This column should contain all of your text data, separated into at least 20 rows.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=20b72c44" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14636,7 +14631,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">openai</span>
-<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;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&quot;</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="o">***********************************</span>
 </pre></div>
 
      </div>
@@ -14644,7 +14639,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div id="cell-id=007da8d1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14663,7 +14658,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div id="cell-id=e7667943" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14702,7 +14697,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div id="cell-id=62d7f091" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14747,7 +14742,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14762,7 +14759,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
-</div><div id="cell-id=800b65d3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14781,7 +14778,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div id="cell-id=6e0eba3c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14799,7 +14796,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div id="cell-id=80d6526c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14828,7 +14825,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -14870,7 +14869,7 @@ No. of characters in each row in the text column:
 </div>
 
 </div>
-<div id="cell-id=bc98f478" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14882,7 +14881,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 </div>
-<div id="cell-id=d8cc4831" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14892,7 +14891,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 </div>
-</div><div id="cell-id=0a595980" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14936,7 +14935,9 @@ No. of characters in each row in the text column:
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
@@ -15088,7 +15089,7 @@ No. of characters in each row in the text column:
 </div>
 
 </div>
-<div id="cell-id=c3d2fa15" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15098,7 +15099,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 </div>
-</div><div id="cell-id=acb3a9fd" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15117,7 +15118,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 
-</div><div id="cell-id=82c23c3c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15140,7 +15141,9 @@ No. of characters in each row in the text column:
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -15155,7 +15158,7 @@ No. of characters in each row in the text column:
 
 </div>
 
-</div><div id="cell-id=7a1c1d51" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15178,7 +15181,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 
-</div><div id="cell-id=56f201fd" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15201,7 +15204,9 @@ No. of characters in each row in the text column:
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
@@ -15268,7 +15273,7 @@ No. of characters in each row in the text column:
 </div>
 
 </div>
-<div id="cell-id=dcffd8c2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15280,7 +15285,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 </div>
-<div id="cell-id=dac72161" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15290,7 +15295,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 </div>
-</div><div id="cell-id=28aa0ad3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15301,7 +15306,7 @@ No. of characters in each row in the text column:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">openai.embeddings_utils</span> <span class="kn">import</span> <span class="n">get_embedding</span><span class="p">,</span> <span class="n">distances_from_embeddings</span>
 
 <span class="k">def</span> <span class="nf">get_rows_sorted_by_relevance</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Function that takes in a question string and a dataframe containing</span>
 <span class="sd">    rows of text and associated embeddings, and returns that dataframe</span>
 <span class="sd">    sorted from least to most relevant for that question</span>
@@ -15331,7 +15336,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 
-</div><div id="cell-id=fdf72892" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15354,7 +15359,9 @@ No. of characters in each row in the text column:
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
@@ -15529,7 +15536,7 @@ No. of characters in each row in the text column:
 </div>
 
 </div>
-<div id="cell-id=ac22a2ab" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15541,7 +15548,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 </div>
-<div id="cell-id=2a8fa5d4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15552,7 +15559,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 </div>
-</div><div id="cell-id=8b6e1f75" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15563,7 +15570,7 @@ No. of characters in each row in the text column:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tiktoken</span>
 
 <span class="k">def</span> <span class="nf">create_prompt</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">max_token_count</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Given a question and a dataframe containing rows of text and their</span>
 <span class="sd">    embeddings, return a text prompt to send to a Completion model</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -15577,11 +15584,11 @@ No. of characters in each row in the text column:
 
 <span class="s2">Context: </span>
 
-<span class="si">{}</span>
+<span class="si">{}</span><span class="s2"></span>
 
 <span class="s2">---</span>
 
-<span class="s2">Question: </span><span class="si">{}</span>
+<span class="s2">Question: </span><span class="si">{}</span><span class="s2"></span>
 <span class="s2">Answer:&quot;&quot;&quot;</span>
     
     <span class="n">current_token_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">prompt_template</span><span class="p">))</span> <span class="o">+</span> \
@@ -15608,7 +15615,7 @@ No. of characters in each row in the text column:
 </div>
 </div>
 
-</div><div id="cell-id=3734c449" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15631,13 +15638,16 @@ No. of characters in each row in the text column:
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Answer the question based on the context below, and if the question
+<pre>
+Answer the question based on the context below, and if the question
 can&#39;t be answered based on the context, say &#34;I don&#39;t know&#34;
 
 Context: 
@@ -15657,7 +15667,7 @@ Answer:
 </div>
 
 </div>
-<div id="cell-id=6fc45ff0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15669,7 +15679,7 @@ Answer:
 </div>
 </div>
 </div>
-<div id="cell-id=0718e42b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15680,7 +15690,7 @@ Answer:
 </div>
 </div>
 </div>
-</div><div id="cell-id=994ea69d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15693,7 +15703,7 @@ Answer:
 <span class="k">def</span> <span class="nf">answer_question</span><span class="p">(</span>
     <span class="n">question</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">max_prompt_tokens</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span> <span class="n">max_answer_tokens</span><span class="o">=</span><span class="mi">150</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Given a question, a dataframe containing rows of text, and a maximum</span>
 <span class="sd">    number of desired tokens in the prompt and response, return the</span>
 <span class="sd">    answer to the question according to an OpenAI Completion model</span>
@@ -15722,7 +15732,7 @@ Answer:
 </div>
 
 </div>
-<div id="cell-id=1783f146" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15734,7 +15744,7 @@ Answer:
 </div>
 </div>
 </div>
-<div id="cell-id=4f11fdc0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15745,7 +15755,7 @@ Answer:
 </div>
 </div>
 </div>
-</div><div id="cell-id=e8f12006" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15770,7 +15780,7 @@ Answer:
 </div>
 </div>
 
-</div><div id="cell-id=507f8840" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15788,7 +15798,7 @@ Answer:
 </div>
 
 </div>
-<div id="cell-id=6e86e37c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15799,7 +15809,7 @@ Answer:
 </div>
 </div>
 </div>
-</div><div id="cell-id=11c07a54" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15824,7 +15834,7 @@ Answer:
 </div>
 </div>
 
-</div><div id="cell-id=ecc37fec" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15842,7 +15852,7 @@ Answer:
 </div>
 
 </div>
-<div id="cell-id=467655d5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15852,7 +15862,7 @@ Answer:
 </div>
 </div>
 </div>
-</div><div id="cell-id=80062641" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15865,15 +15875,15 @@ Answer:
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">&quot;What are common symptoms of Chagas Disease?&quot;</span>
 
-<span class="s2">ORIGINAL ANSWER: </span><span class="si">{</span><span class="n">initial_chagas_disease_symptoms_answer</span><span class="si">}</span>
+<span class="s2">ORIGINAL ANSWER: </span><span class="si">{</span><span class="n">initial_chagas_disease_symptoms_answer</span><span class="si">}</span><span class="s2"></span>
 
-<span class="s2">CUSTOM ANSWER:   </span><span class="si">{</span><span class="n">custom_chagas_disease_symptom_answer</span><span class="si">}</span>
+<span class="s2">CUSTOM ANSWER:   </span><span class="si">{</span><span class="n">custom_chagas_disease_symptom_answer</span><span class="si">}</span><span class="s2"></span>
 
 <span class="s2">&quot;How can Chagas Disease be diagnosed and what treatments are available if tested positive?&quot;</span>
 
-<span class="s2">ORIGINAL ANSWER: </span><span class="si">{</span><span class="n">initial_chagas_diagnosis_treatment_answer</span><span class="si">}</span>
+<span class="s2">ORIGINAL ANSWER: </span><span class="si">{</span><span class="n">initial_chagas_diagnosis_treatment_answer</span><span class="si">}</span><span class="s2"></span>
 
-<span class="s2">CUSTOM ANSWER:   </span><span class="si">{</span><span class="n">custom_chagas_disease_diagnosis_treatment_answer</span><span class="si">}</span>
+<span class="s2">CUSTOM ANSWER:   </span><span class="si">{</span><span class="n">custom_chagas_disease_diagnosis_treatment_answer</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -15888,13 +15898,16 @@ Answer:
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&#34;What are common symptoms of Chagas Disease?&#34;
+<pre>
+&#34;What are common symptoms of Chagas Disease?&#34;
 
 ORIGINAL ANSWER: Common symptoms of Chagas Disease include fever, fatigue, body aches, loss of appetite, and swollen lymph nodes. In some cases, more severe symptoms can develop, such as facial swelling, difficulty breathing, an enlarged heart, or stroke.
 
@@ -15915,14 +15928,14 @@ CUSTOM ANSWER:   Chagas disease can be diagnosed by finding the parasite in the 
 </div>
 
 </div>
-<div id="cell-id=dbff6ca4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>This initial exploration shows significantly more detailed answers of the disease than the initial, uncostumized model. It shows the power of costumization in this example for scientific purposes.</p>
-<p>The data source for our context creation was &quot;just&quot; a wikipedia page, if we are to change the source of information for your embeddings to e.g. <a href="https://pubmed.ncbi.nlm.nih.gov/">NCBI´s pubmed</a>, with an automated script to extract text out of relevant publications for a query (e.g. disease), we would immediately generate a chatbot for cutting edge scientific evalution of <strong>primary literature</strong>.</p>
+<p>The data source for our context creation was "just" a wikipedia page, if we are to change the source of information for your embeddings to e.g. <a href="https://pubmed.ncbi.nlm.nih.gov/">NCBI´s pubmed</a>, with an automated script to extract text out of relevant publications for a query (e.g. disease), we would immediately generate a chatbot for cutting edge scientific evalution of <strong>primary literature</strong>.</p>
 
 </div>
 </div>
