@@ -1,7 +1,7 @@
 # Customize-an-OpenAI-Chatbot
 ## _Showcase of an embeddings based customization approach of Chat-GPT_
 
-[![Add flower image here](mariia-shalabaieva-unsplash.jpg)
+![Add flower image here](mariia-shalabaieva-unsplash.jpg)
 
 
 This **Generative AI Task** involves customizing OpenAI`s Large-Language-Model (LLM), there are **2 methods offered** for customization:
