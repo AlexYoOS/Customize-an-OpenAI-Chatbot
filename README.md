@@ -1,5 +1,5 @@
 # Customize-an-OpenAI-Chatbot
-## _Showcase of an embeddings based customization approach of Chat-GPT_
+## _Showcase of an embeddings based customization approach for Chat-GPT_
 
 ![Add flower image here](mariia-shalabaieva-unsplash.jpg)
 
